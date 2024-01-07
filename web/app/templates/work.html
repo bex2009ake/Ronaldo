@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Work</title>
+</head>
+<body>
+    <style>
+        .main {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f4f4f4;
+            
+        }
+
+
+        form {
+            width: 40%;
+            height: 35vh;
+            background-color: #fff;
+            box-sizing: border-box;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 3%;
+        }
+
+
+        input {
+            width: 80%;
+            height: 4vh;
+        }
+
+
+        .post {
+            width: 50%;
+            height: 5vh;
+            background-color: rgb(126, 196, 23);
+            color: white;
+            font-size: 25px;
+            border: 0;
+            border-radius: 15px;
+            cursor: pointer;
+        }
+
+        @media screen and (max-width:900px) {
+            form {
+                width: 90%;
+                height: 60vh;
+                gap: 5%;
+            }
+        }
+
+
+        @media screen and (max-width:500px) {
+            form {
+                width: 90%;
+                height: 60vh;
+                gap: 5%;
+            }
+        }
+        
+    </style>
+    <div class="main">
+        <form action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <h1>Work in</h1>
+            {{ form.name }}
+            {{ form.img }}
+            <input type="submit" value="post" class="post">
+        </form>
+    </div>
+</body>
+</html>
